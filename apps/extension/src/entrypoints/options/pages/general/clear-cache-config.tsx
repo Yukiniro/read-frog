@@ -13,7 +13,7 @@ import {
 import { Button } from '@repo/ui/components/button'
 import { IconTrash } from '@tabler/icons-react'
 import { useState } from 'react'
-import { cleanupAllCache } from '@/entrypoints/background/cache-cleanup'
+import { sendMessage } from '@/utils/message'
 import { ConfigCard } from '../../components/config-card'
 
 export function ClearCacheConfig() {
@@ -22,7 +22,7 @@ export function ClearCacheConfig() {
   async function handleClearCache() {
     try {
       setIsClearing(true)
-      await cleanupAllCache()
+      await sendMessage('clearAllCache')
       // Show success message or notification here if needed
     }
     catch (error) {
