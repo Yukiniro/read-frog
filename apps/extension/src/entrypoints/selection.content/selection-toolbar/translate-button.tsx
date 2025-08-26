@@ -5,6 +5,7 @@ import { readUIMessageStream, streamText } from 'ai'
 import { useAtom, useAtomValue, useSetAtom } from 'jotai'
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { toast } from 'sonner'
+import { useDraggable } from '@/hooks/use-draggable'
 import { ISO6393_TO_6391, LANG_CODE_TO_EN_NAME } from '@/types/config/languages'
 import { isPureTranslateProvider } from '@/types/config/provider'
 import { authClient } from '@/utils/auth/auth-client'
@@ -48,6 +49,10 @@ export function TranslatePopover() {
   const selectionContent = useAtomValue(selectionContentAtom)
   const popoverRef = useRef<HTMLDivElement>(null)
   const { data: session } = authClient.useSession()
+
+  const { ref: dragRef, style: dragStyle } = useDraggable({
+    initialPosition: mouseClickPosition || { x: 0, y: 0 },
+  })
 
   const createVocabulary = useMutation({
     ...trpc.vocabulary.create.mutationOptions(),
@@ -179,12 +184,12 @@ export function TranslatePopover() {
     <div
       ref={popoverRef}
       className="fixed z-[2147483647] bg-white dark:bg-zinc-800 border rounded-lg w-[300px] shadow-lg"
-      style={{
-        left: mouseClickPosition.x,
-        top: mouseClickPosition.y,
-      }}
+      style={dragStyle}
     >
-      <div className="flex items-center justify-between p-4 border-b">
+      <div
+        ref={dragRef as React.RefObject<HTMLDivElement>}
+        className="flex items-center justify-between p-4 border-b hover:cursor-grab active:cursor-grabbing select-none"
+      >
         <div className="flex items-center gap-2">
           <Icon icon="ri:translate" strokeWidth={0.8} className="size-4.5 text-zinc-600 dark:text-zinc-400" />
           <h2 className="text-base font-medium text-zinc-900 dark:text-zinc-100">Translation</h2>
