@@ -59,7 +59,7 @@ export function useDraggable(options: UseDraggableOptions = {}): UseDraggableRet
 
   // Handle mouse down to start drag
   const handleMouseDown = useCallback((event: MouseEvent) => {
-    if (!ref.current)
+    if (!ref.current || event.button !== 0)
       return
 
     const rect = ref.current.getBoundingClientRect()
