@@ -70,7 +70,7 @@ options:
           all: 所有內容
     clearCache:
       title: 清理快取
-      description: 清理所有翻譯快取以釋放儲存空間
+      description: 清理瀏覽器中的所有翻譯快取
       clearing: 清理中...
       dialog:
         title: 清理快取

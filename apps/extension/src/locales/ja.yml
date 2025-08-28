@@ -69,7 +69,7 @@ options:
           all: すべてのコンテンツ
     clearCache:
       title: キャッシュクリア
-      description: すべての翻訳キャッシュをクリアしてストレージ容量を解放します
+      description: ブラウザのすべての翻訳キャッシュをクリアします
       clearing: クリア中...
       dialog:
         title: キャッシュクリア

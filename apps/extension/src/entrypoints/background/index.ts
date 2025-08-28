@@ -38,7 +38,6 @@ export default defineBackground(() => {
   })
 
   onMessage('clearAllCache', async () => {
-    logger.info('clearAllCache')
     await cleanupAllCache()
   })
 

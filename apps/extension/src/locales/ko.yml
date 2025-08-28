@@ -70,7 +70,7 @@ options:
           all: 전체 내용
     clearCache:
       title: 캐시 지우기
-      description: 모든 번역 캐시를 지워서 저장 공간을 확보합니다
+      description: 브라우저의 모든 번역 캐시를 지웁니다
       clearing: 지우는 중...
       dialog:
         title: 캐시 지우기

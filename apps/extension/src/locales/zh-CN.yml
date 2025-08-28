@@ -70,7 +70,7 @@ options:
           all: 所有内容
     clearCache:
       title: 清理缓存
-      description: 清理所有翻译缓存以释放存储空间
+      description: 清理浏览器中的所有翻译缓存
       clearing: 清理中...
       dialog:
         title: 清理缓存
