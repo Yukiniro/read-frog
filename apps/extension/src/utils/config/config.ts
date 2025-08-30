@@ -19,9 +19,18 @@ export async function loadGlobalConfig() {
   if (configSchema.safeParse(config).success) {
     logger.info('Loaded global config', config)
     if (config && shouldDisableFloatingButton(window.location.href, config)) {
-      config.floatingButton.enabled = false
+      const updatedConfig = {
+        ...config,
+        floatingButton: {
+          ...config.floatingButton,
+          enabled: false,
+        },
+      }
+      globalConfig = updatedConfig
     }
-    globalConfig = config
+    else {
+      globalConfig = config
+    }
   }
 }
 

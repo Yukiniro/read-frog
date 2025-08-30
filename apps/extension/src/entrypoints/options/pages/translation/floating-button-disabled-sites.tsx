@@ -33,7 +33,7 @@ function PatternTable() {
 
   const addPattern = (pattern: string) => {
     const cleanedPattern = pattern.trim()
-    if (!cleanedPattern)
+    if (!cleanedPattern || disabledFloatingButtonPatterns.includes(cleanedPattern))
       return
 
     setTranslateConfig({
