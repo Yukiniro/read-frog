@@ -6,9 +6,11 @@ import { useEffect } from 'react'
 import FrogToast from '@/components/frog-toast'
 import { UserAccount } from '@/components/user-account'
 import { version } from '../../../package.json'
+import { initIsCurrentSiteInDisabledPatternsAtom } from './atoms/floating-button-disabled-sites'
 import { initIsIgnoreTabAtom } from './atoms/ignore'
 import { AlwaysTranslate } from './components/always-translate'
 import FloatingButton from './components/floating-button'
+import { FloatingButtonDisabledSites } from './components/floating-button-disabled-sites'
 import Hotkey from './components/hotkey-selector'
 import LanguageOptionsSelector from './components/language-options-selector'
 import QuickLinks from './components/quick-links'
@@ -21,10 +23,12 @@ import TranslateProviderSelector from './components/translate-provider-selector'
 
 function App() {
   const initIsIgnoreTab = useSetAtom(initIsIgnoreTabAtom)
+  const initIsCurrentSiteInDisabledPatterns = useSetAtom(initIsCurrentSiteInDisabledPatternsAtom)
 
   useEffect(() => {
     initIsIgnoreTab()
-  }, [initIsIgnoreTab])
+    initIsCurrentSiteInDisabledPatterns()
+  }, [initIsIgnoreTab, initIsCurrentSiteInDisabledPatterns])
 
   return (
     <>
@@ -42,6 +46,7 @@ function App() {
         <AlwaysTranslate />
         <Hotkey />
         <FloatingButton />
+        <FloatingButtonDisabledSites />
         <SelectionToolbar />
         <QuickLinks />
       </div>
