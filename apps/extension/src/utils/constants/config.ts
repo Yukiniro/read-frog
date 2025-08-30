@@ -97,6 +97,7 @@ export const DEFAULT_CONFIG: Config = {
     page: {
       range: 'main',
       autoTranslatePatterns: ['news.ycombinator.com'],
+      disabledFloatingButtonPatterns: [],
     },
     promptsConfig: DEFAULT_TRANSLATE_PROMPTS_CONFIG,
     requestQueueConfig: {

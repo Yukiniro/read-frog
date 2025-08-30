@@ -9,6 +9,7 @@ popup:
   translate: 翻訳
   showOriginal: 原文を表示
   enabledFloatingButton: フローティングボタンを有効化
+  disableFloatingButtonOnSite: このサイトでフローティングボタンを無効化
   enabledSelectionToolbar: 選択ツールバーを有効化
   alwaysTranslate: このサイトを常に翻訳する
   options: オプション
@@ -77,6 +78,11 @@ options:
         confirm: 確認
         cancel: キャンセル
         description: この操作により、すべての翻訳キャッシュがクリアされます。この操作は元に戻せません。
+    floatingButtonDisabledSites:
+      title: フローティングボタン無効化サイト
+      description: フローティングボタンを無効化するウェブサイトを設定します
+      enterUrlPattern: URLパターンを入力
+      urlPattern: URLパターン
   translation:
     title: 翻訳
     requestQueueConfig:

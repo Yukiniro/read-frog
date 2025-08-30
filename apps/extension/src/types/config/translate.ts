@@ -22,6 +22,7 @@ export const translateConfigSchema = z.object({
   page: z.object({
     range: pageTranslateRangeSchema,
     autoTranslatePatterns: z.array(z.string()),
+    disabledFloatingButtonPatterns: z.array(z.string()).default([]),
   }),
   promptsConfig: promptsConfigSchema,
   requestQueueConfig: requestQueueConfigSchema,

@@ -7,6 +7,7 @@ import { configSchema } from '@/types/config/config'
 import {
   CONFIG_STORAGE_KEY,
 } from '../constants/config'
+import { shouldDisableFloatingButton } from '../host/translate/disable-floating-button'
 import { logger } from '../logger'
 import { sendMessage } from '../message'
 
@@ -17,6 +18,9 @@ export async function loadGlobalConfig() {
   const config = await sendMessage('getInitialConfig', undefined)
   if (configSchema.safeParse(config).success) {
     logger.info('Loaded global config', config)
+    if (config && shouldDisableFloatingButton(window.location.href, config)) {
+      config.floatingButton.enabled = false
+    }
     globalConfig = config
   }
 }
