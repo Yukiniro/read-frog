@@ -81,7 +81,7 @@ options:
     floatingButtonDisabledSites:
       title: フローティングボタン無効化サイト
       description: フローティングボタンを無効化するウェブサイトを設定します
-      enterUrlPattern: URLパターンを入力
+      enterUrlPattern: URL パターンを入力
       urlPattern: URL パターン
   translation:
     title: 翻訳
