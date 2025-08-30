@@ -1,8 +1,9 @@
+import type { Config } from '@/types/config/config'
 import { DEFAULT_AUTO_TRANSLATE_SHORTCUT_KEY } from '@/utils/constants/translate'
 
 export const description = 'Implement customize translation shortcut key'
 
-export const configExample = {
+export const configExample: Config = {
   language: {
     detectedCode: 'eng',
     sourceCode: 'auto',
@@ -77,6 +78,7 @@ export const configExample = {
     page: {
       range: 'main',
       autoTranslatePatterns: ['news.ycombinator.com'],
+      disabledFloatingButtonPatterns: [],
     },
     promptsConfig: {
       prompt: 'default',
