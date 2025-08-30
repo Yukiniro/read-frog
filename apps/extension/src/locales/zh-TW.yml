@@ -83,7 +83,7 @@ options:
       title: 懸浮按鈕停用網站
       description: 設定需要停用懸浮按鈕的網站
       enterUrlPattern: 輸入網址模式
-      urlPattern: 網址模式
+      urlPattern: URL 模式
   translation:
     title: 翻譯
     requestQueueConfig:
