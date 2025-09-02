@@ -26,7 +26,7 @@ export const NAV_ITEMS = {
   'floating-button': {
     title: 'floatingButton',
     url: '/floating-button',
-    icon: 'tabler:affiliate',
+    icon: 'tabler:float-right',
     component: FloatingButtonPage,
   },
   'config': {

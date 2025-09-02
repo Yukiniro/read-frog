@@ -13,6 +13,7 @@ import readFrogLogo from '@/assets/icons/read-frog.png'
 import { configFields } from '@/utils/atoms/config'
 import { APP_NAME } from '@/utils/constants/app'
 import { sendMessage } from '@/utils/message'
+import { shadowWrapper } from '../../'
 import { isDraggingButtonAtom, isSideOpenAtom } from '../../atoms'
 import HiddenButton from './components/hidden-button'
 import FloatingReadButton from './floating-read-button'
@@ -138,7 +139,7 @@ export default function FloatingButton() {
               <Icon icon="tabler:x" className="h-3 w-3 text-neutral-400 dark:text-neutral-600" />
             </div>
           </DropdownMenuTrigger>
-          <DropdownMenuContent align="start" side="left" hideWhenDetached>
+          <DropdownMenuContent align="start" side="left" container={shadowWrapper} hideWhenDetached>
             <DropdownMenuItem
               onMouseDown={e => e.stopPropagation()}
               onClick={() => {
