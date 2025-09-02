@@ -88,7 +88,7 @@ export default function FloatingButton() {
     document.addEventListener('mousemove', handleMouseMove)
   }
 
-  if (!floatingButton.enabled) {
+  if (!floatingButton.enabled || floatingButton.disabledFloatingButtonPatterns.some(pattern => window.location.href.includes(pattern))) {
     return null
   }
 

@@ -79,7 +79,9 @@ options:
         confirm: Confirm
         cancel: Cancel
         description: This operation will clear all translation cache. This action cannot be undone.
-    floatingButtonDisabledSites:
+  floatingButton:
+    title: Floating Button
+    disabledSites:
       title: Floating Button Disabled Sites
       description: Configure websites where the floating button should be disabled
       enterUrlPattern: Enter URL pattern

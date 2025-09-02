@@ -97,7 +97,6 @@ export const DEFAULT_CONFIG: Config = {
     page: {
       range: 'main',
       autoTranslatePatterns: ['news.ycombinator.com'],
-      disabledFloatingButtonPatterns: [],
     },
     promptsConfig: DEFAULT_TRANSLATE_PROMPTS_CONFIG,
     requestQueueConfig: {
@@ -110,6 +109,7 @@ export const DEFAULT_CONFIG: Config = {
   floatingButton: {
     enabled: true,
     position: 0.66,
+    disabledFloatingButtonPatterns: [],
   },
   selectionToolbar: {
     enabled: true,

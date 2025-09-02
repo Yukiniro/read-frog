@@ -18,8 +18,8 @@ import { ConfigCard } from '../../components/config-card'
 export function FloatingButtonDisabledSites() {
   return (
     <ConfigCard
-      title={i18n.t('options.general.floatingButtonDisabledSites.title')}
-      description={i18n.t('options.general.floatingButtonDisabledSites.description')}
+      title={i18n.t('options.floatingButton.disabledSites.title')}
+      description={i18n.t('options.floatingButton.disabledSites.description')}
     >
       <PatternTable />
     </ConfigCard>
@@ -27,32 +27,26 @@ export function FloatingButtonDisabledSites() {
 }
 
 function PatternTable() {
-  const [translateConfig, setTranslateConfig] = useAtom(configFields.translate)
+  const [floatingButtonConfig, setFloatingButtonConfig] = useAtom(configFields.floatingButton)
   const [inputValue, setInputValue] = useState('')
-  const { disabledFloatingButtonPatterns = [] } = translateConfig.page
+  const { disabledFloatingButtonPatterns = [] } = floatingButtonConfig
 
   const addPattern = (pattern: string) => {
     const cleanedPattern = pattern.trim()
     if (!cleanedPattern || disabledFloatingButtonPatterns.includes(cleanedPattern))
       return
 
-    setTranslateConfig({
-      ...translateConfig,
-      page: {
-        ...translateConfig.page,
-        disabledFloatingButtonPatterns: [...disabledFloatingButtonPatterns, cleanedPattern],
-      },
+    setFloatingButtonConfig({
+      ...floatingButtonConfig,
+      disabledFloatingButtonPatterns: [...disabledFloatingButtonPatterns, cleanedPattern],
     })
     setInputValue('')
   }
 
   const removePattern = (pattern: string) => {
-    setTranslateConfig({
-      ...translateConfig,
-      page: {
-        ...translateConfig.page,
-        disabledFloatingButtonPatterns: disabledFloatingButtonPatterns.filter(p => p !== pattern),
-      },
+    setFloatingButtonConfig({
+      ...floatingButtonConfig,
+      disabledFloatingButtonPatterns: disabledFloatingButtonPatterns.filter(p => p !== pattern),
     })
   }
 
@@ -70,7 +64,7 @@ function PatternTable() {
     <div className="flex flex-col gap-2">
       <div className="flex items-center gap-2">
         <Input
-          placeholder={i18n.t('options.general.floatingButtonDisabledSites.enterUrlPattern')}
+          placeholder={i18n.t('options.floatingButton.disabledSites.enterUrlPattern')}
           value={inputValue}
           onChange={e => setInputValue(e.target.value)}
           onKeyDown={handleKeyPress}
@@ -83,7 +77,7 @@ function PatternTable() {
         <TableHeader>
           <TableRow>
             <TableHead className="w-[100px]">
-              {i18n.t('options.general.floatingButtonDisabledSites.urlPattern')}
+              {i18n.t('options.floatingButton.disabledSites.urlPattern')}
             </TableHead>
             <TableHead className="text-right"></TableHead>
           </TableRow>

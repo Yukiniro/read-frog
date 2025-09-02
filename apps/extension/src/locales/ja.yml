@@ -78,7 +78,9 @@ options:
         confirm: 確認
         cancel: キャンセル
         description: この操作により、すべての翻訳キャッシュがクリアされます。この操作は元に戻せません。
-    floatingButtonDisabledSites:
+  floatingButton:
+    title: フローティングボタン
+    disabledSites:
       title: フローティングボタン無効化サイト
       description: フローティングボタンを無効化するウェブサイトを設定します
       enterUrlPattern: URL パターンを入力

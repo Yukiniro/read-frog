@@ -7,30 +7,25 @@ import { configSchema } from '@/types/config/config'
 import {
   CONFIG_STORAGE_KEY,
 } from '../constants/config'
-import { shouldDisableFloatingButton } from '../host/translate/disable-floating-button'
 import { logger } from '../logger'
 import { sendMessage } from '../message'
 
 // eslint-disable-next-line import/no-mutable-exports
 export let globalConfig: Config | null = null
 
+export function shouldDisableFloatingButton(url: string, config: Config): boolean {
+  const disabledFloatingButtonPatterns = config?.floatingButton.disabledFloatingButtonPatterns
+  if (!disabledFloatingButtonPatterns)
+    return false
+
+  return disabledFloatingButtonPatterns.some(pattern => url.toLowerCase().includes(pattern.toLowerCase()))
+}
+
 export async function loadGlobalConfig() {
   const config = await sendMessage('getInitialConfig', undefined)
   if (configSchema.safeParse(config).success) {
     logger.info('Loaded global config', config)
-    if (config && shouldDisableFloatingButton(window.location.href, config)) {
-      const updatedConfig = {
-        ...config,
-        floatingButton: {
-          ...config.floatingButton,
-          enabled: false,
-        },
-      }
-      globalConfig = updatedConfig
-    }
-    else {
-      globalConfig = config
-    }
+    globalConfig = config
   }
 }
 

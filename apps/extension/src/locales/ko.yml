@@ -79,7 +79,9 @@ options:
         confirm: 확인
         cancel: 취소
         description: 이 작업은 모든 번역 캐시를 지웁니다. 이 작업은 되돌릴 수 없습니다.
-    floatingButtonDisabledSites:
+  floatingButton:
+    title: 플로팅 버튼
+    disabledSites:
       title: 플로팅 버튼 비활성화 사이트
       description: 플로팅 버튼을 비활성화할 웹사이트를 설정합니다
       enterUrlPattern: URL 패턴 입력

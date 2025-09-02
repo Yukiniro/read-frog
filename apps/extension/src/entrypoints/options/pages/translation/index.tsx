@@ -4,7 +4,6 @@ import { AlwaysTranslate } from './always-translate'
 import { ClearCacheConfig } from './clear-cache-config'
 import { CustomAutoTranslateShortcutKey } from './custom-auto-translate-shortcut-key'
 import { CustomTranslationStyle } from './custom-translation-style'
-import { FloatingButtonDisabledSites } from './floating-button-disabled-sites'
 import { PersonalizedPrompt } from './personalized-prompt'
 import { RequestRate } from './request-rate'
 import { TranslationMode } from './translation-mode'
@@ -17,7 +16,6 @@ export function TranslationPage() {
       <RequestRate />
       <CustomTranslationStyle />
       <AlwaysTranslate />
-      <FloatingButtonDisabledSites />
       <PersonalizedPrompt />
       <ClearCacheConfig />
     </PageLayout>
