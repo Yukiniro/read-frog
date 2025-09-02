@@ -81,6 +81,9 @@ options:
         description: 이 작업은 모든 번역 캐시를 지웁니다. 이 작업은 되돌릴 수 없습니다.
   floatingButton:
     title: 플로팅 버튼
+    closeMenu:
+      disableForSite: 이 사이트에서 비활성화
+      disableGlobally: 전역 비활성화
     disabledSites:
       title: 플로팅 버튼 비활성화 사이트
       description: 플로팅 버튼을 비활성화할 웹사이트를 설정합니다
