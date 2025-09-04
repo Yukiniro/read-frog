@@ -147,7 +147,7 @@ options:
       title: 自訂翻譯快捷鍵
       description: 允許您自訂全文翻譯快捷鍵
     autoTranslateLanguages:
-      title: 基於語言的自动翻译
+      title: 基於語言的自動翻譯
       description: 當檢測到特定語言時自動翻譯頁面內容
       selectLanguages: 選擇語言
   config:
