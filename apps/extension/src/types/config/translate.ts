@@ -1,7 +1,7 @@
+import { langCodeISO6393Schema } from '@repo/definitions'
 import { z } from 'zod'
 import { HOTKEYS } from '@/utils/constants/hotkeys'
 import { MIN_TRANSLATE_CAPACITY, MIN_TRANSLATE_RATE } from '@/utils/constants/translate'
-import { langCodeISO6393Schema } from './languages'
 import { pageTranslateRangeSchema, promptsConfigSchema, TRANSLATE_PROVIDER_NAMES, translateModelsSchema, translationNodeStyleSchema } from './provider'
 
 export const requestQueueConfigSchema = z.object({

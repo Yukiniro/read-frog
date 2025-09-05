@@ -1,6 +1,7 @@
-import type { LangCodeISO6393 } from '@/types/config/languages'
+import type { LangCodeISO6393 } from '@repo/definitions'
 import { i18n } from '#imports'
 import { Icon } from '@iconify/react'
+import { LANG_CODE_TO_EN_NAME, LANG_CODE_TO_LOCALE_NAME, langCodeISO6393Schema } from '@repo/definitions'
 import { Button } from '@repo/ui/components/button'
 import {
   DropdownMenu,
@@ -9,7 +10,6 @@ import {
   DropdownMenuTrigger,
 } from '@repo/ui/components/dropdown-menu'
 import { useAtom } from 'jotai'
-import { LANG_CODE_TO_EN_NAME, LANG_CODE_TO_LOCALE_NAME, langCodeISO6393Schema } from '@/types/config/languages'
 import { configFields } from '@/utils/atoms/config'
 import { ConfigCard } from '../../components/config-card'
 
@@ -23,7 +23,7 @@ export function AutoTranslateLanguages() {
       >
         <AutoTranslateLanguagesSelector />
       </ConfigCard>
-      <SelectedLanguagesDisplay />
+      <SelectedLanguageCells />
     </div>
   )
 }
@@ -32,7 +32,6 @@ function AutoTranslateLanguagesSelector() {
   const [translateConfig, setTranslateConfig] = useAtom(configFields.translate)
   const selectedLanguages = translateConfig.page.autoTranslateLanguages
 
-  // 获取所有支持的语言代码
   const allLanguages = langCodeISO6393Schema.options
 
   const handleLanguageToggle = (language: LangCodeISO6393, checked: boolean) => {
@@ -72,7 +71,7 @@ function AutoTranslateLanguagesSelector() {
   )
 }
 
-function SelectedLanguagesDisplay() {
+function SelectedLanguageCells() {
   const [translateConfig, setTranslateConfig] = useAtom(configFields.translate)
   const selectedLanguages = translateConfig.page.autoTranslateLanguages
 
