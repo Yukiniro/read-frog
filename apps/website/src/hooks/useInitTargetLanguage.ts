@@ -1,6 +1,6 @@
 'use client'
 
-import type { LangCodeISO6391, LangCodeISO6393 } from '@repo/definitions'
+import type { LangCodeISO6393 } from '@repo/definitions'
 import { LOCALE_TO_ISO6393 } from '@repo/definitions'
 import { useLocale } from 'next-intl'
 import { useEffect, useMemo, useState } from 'react'
@@ -14,7 +14,7 @@ export function useInitTargetLanguage(): [
   const [overrideLanguage, setOverrideLanguage] = useState<LangCodeISO6393 | undefined>(undefined)
 
   const websiteLanguage = useMemo<LangCodeISO6393>(() => {
-    return LOCALE_TO_ISO6393[locale as LangCodeISO6391] ?? 'eng'
+    return LOCALE_TO_ISO6393[locale] ?? 'eng'
   }, [locale])
 
   const current = overrideLanguage ?? websiteLanguage

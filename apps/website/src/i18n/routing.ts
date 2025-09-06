@@ -10,3 +10,9 @@ export const routing = defineRouting({
   // Used when no locale matches
   defaultLocale: 'en',
 })
+
+declare module 'next-intl' {
+  interface AppConfig {
+    Locale: Locale
+  }
+}
